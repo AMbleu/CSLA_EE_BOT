@@ -23,4 +23,5 @@
 hs_err_pid*
 
 #File Containing Bots Token
-.env
+*.env
+node_modules
