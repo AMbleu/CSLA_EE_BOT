@@ -21,7 +21,7 @@ const message_generalID         = '754920121427820546';
 const channel_Communication = '753036948930560040';
 const message_CommunicationID   = '754921457867292712';
 const channel_Power	        = '753036805259132929';
-const message_PowerID           = '754907046544932865';
+const message_PowerID           = '755134764536692856';
 const channel_Computers	    = '753036882983518248';
 const message_ComputersID       = '754907138144600134';
 const channel_Controls	    = '753037118313594890';
@@ -41,56 +41,51 @@ const message_Electronics   = 'Welcome to the Electronics Specialty Calsses addi
 const message_Biomedical    = 'Welcome to the Biomedical Specialty Calsses adding Channel\nTo get access to the class channel and othe features please react with the appropriate emoji for your class: \nEE3810 - Sensors, Data Acquisition, and Instrumentation w/ Applicaiton in Biomedical Engineering: :heart: \nEE4810 - Biomedical Devices: :mechanical_leg: \nEE4820 - Biomedical Signal Processing: :brain:';
 const message_Labs          = 'Welcome to the Labs adding Channel\nTo get access to the class channel and othe features please react with the appropriate emoji for your class:\nEE2049 - Electrical Circuits and Measurments Labratory: :cloud_lightning: \nEE2449 - Digital Logic Labratory: :computer: \nEE3209 - Communications Labratory: :microphone: \nEE3309 - Electromagnetic Energy Conversion Labratory: :magnet: \nEE3709 - Electronics Labratory: :robot: \nEE4229 - Digital Signals Processing Labratory: :loud_sound: \nEE4689 - Control Systems Labratory: :control_knobs:';
 
-
-
-
-
-
 //Logs that The console is up and running on console
 bot.on('ready', () => {
     console.log(`${bot.user.tag}`);
 });
 
 //Sends message to new users in the general chat
-bot.on('guildMemberAdd', (member) =>{
+bot.on('guildMemberAdd', (member) => {
     bot.channels.cache.get(channelGeneral).send(`${member.displayName} Welcome to the CSULA EE Server! Please Read the Rules to access the rest of the Server!`);
     console.log(`${member.user.tag}`);
 });
 
 //I want the User to be assigned a role when they react to a specific message
 
-bot.on('messageReactionAdd', (reaction, user) =>{
+bot.on('messageReactionAdd', (reaction, user) => {
     const { name } = reaction.emoji;
-    const memeber = reaction.message.guild.memeber.cahce.get(user.id);
+    const member = reaction.message.guild.members.cache.get(user.id);
     //Adds classes for the General Classes
     if(reaction.message.id === message_generalID){
         switch(name){
             case '🌩️':
-                member.role.add('752306609744773151');//Add EE2040 - Circuit Analysis 1
+                member.roles.add('752306609744773151');//Add EE2040 - Circuit Analysis 1
             break;
             case '👨‍💻':
-                member.role.add('752306751080104026');//Add EE2440 - Digital Engineering
+                member.roles.add('752306751080104026');//Add EE2440 - Digital Engineering
             break;
             case '💻':
-                member.role.add('752316429633585167');//Add EE2450 - Embedded 1
+                member.roles.add('752316429633585167');//Add EE2450 - Embedded 1
             break;
             case '💸':
-                member.role.add('752316163077177384');//Add EE3000 - Econimics for Engineers
+                member.roles.add('752316163077177384');//Add EE3000 - Econimics for Engineers
             break;
             case '👼':
-                member.role.add('752316848187506752');//Add EE3010 - Ethics and Professionalism in Engineering
+                member.roles.add('752316848187506752');//Add EE3010 - Ethics and Professionalism in Engineering
             break;
             case '📶':
-                member.role.add('752315931249737818');//Add EE3020 - Signals and Systems
+                member.roles.add('752315931249737818');//Add EE3020 - Signals and Systems
             break;
             case '⛈️':
-                member.role.add('752318332220473461');//Add EE3030 - Circuit Analysis 2
+                member.roles.add('752318332220473461');//Add EE3030 - Circuit Analysis 2
             break;
             case '🎲':
-                member.role.add('752315754573201420');//Add EE3040 - Probability
+                member.roles.add('752315754573201420');//Add EE3040 - Probability
             break;
             case '🔌':
-                member.role.add('752315551942180945');//Add EE3050 - Electric Machines
+                member.roles.add('752315551942180945');//Add EE3050 - Electric Machines
             break;
         }
     }
@@ -98,25 +93,25 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_CommunicationID){
         switch(name){
             case '🔉':
-                member.role.add('752319284184875059');//Add EE3200 - Analog Communications Systems
+                member.roles.add('752319284184875059');//Add EE3200 - Analog Communications Systems
             break;
             case '🔊':
-                member.role.add('752312925544513556');//Add EE4200 - Digital Communications Systems
+                member.roles.add('752312925544513556');//Add EE4200 - Digital Communications Systems
             break;
             case '🧩':
-                member.role.add('752321545107669032');//Add EE4210 - Coding for Communications
+                member.roles.add('752321545107669032');//Add EE4210 - Coding for Communications
             break;
             case '🎶':
-                member.role.add('752321338500448268');//Add EE4220 - Digital Signals Processing
+                member.roles.add('752321338500448268');//Add EE4220 - Digital Signals Processing
             break;
             case '📡':
-                member.role.add('752321722648100876');//Add EE4230 - Antennas
+                member.roles.add('752321722648100876');//Add EE4230 - Antennas
             break;
             case '🛸':
-                member.role.add('752321987522723881';//Add EE4240 - Fiberoptics
+                member.roles.add('752321987522723881');//Add EE4240 - Fiberoptics
             break;
             case '👀':
-                member.role.add('752322078665080914');//Add EE4250 - Digital Iamge Processing
+                member.roles.add('752322078665080914');//Add EE4250 - Digital Iamge Processing
             break;
         }
     }
@@ -124,22 +119,22 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_PowerID){
         switch(name){
             case '🚙':
-                member.role.add('752315036604694539');//Add EE3300 - Electric Machines
+                member.roles.add('752315036604694539');//Add EE3300 - Electric Machines
             break;
             case '🚂':
-                member.role.add('752312721722179645');//Add EE4300 - Introduction to Power Systems Engineering
+                member.roles.add('752312721722179645');//Add EE4300 - Introduction to Power Systems Engineering
             break;
             case '🔨':
-                member.role.add('752312609382072393');//Add EE4310 - Power System Analysis
+                member.roles.add('752312609382072393');//Add EE4310 - Power System Analysis
             break;
             case '👨‍🏭':
-                member.role.add('752312515370942515');//Add E4320 - Electric Power Distribution
+                member.roles.add('752312515370942515');//Add E4320 - Electric Power Distribution
             break;
             case '🏎️':
-                member.role.add('752311930823376927');//Add EE4330 - Power Electronics
+                member.roles.add('752311930823376927');//Add EE4330 - Power Electronics
             break;
             case '🧲':
-                member.role.add('752322334685396997');//Add EE4340 - Electromagnetic Energy Conversion
+                member.roles.add('752322334685396997');//Add EE4340 - Electromagnetic Energy Conversion
             break;
         }
     }
@@ -147,22 +142,22 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_ComputersID){
         switch(name){
             case '💻':
-                member.role.add('752314392049090622');//Add EE3450 - Embedded System Programming 2
+                member.roles.add('752314392049090622');//Add EE3450 - Embedded System Programming 2
             break;
             case '📁':
-                member.role.add('752311821456638023');//Add EE4400 - Data Communications and Networking
+                member.roles.add('752311821456638023');//Add EE4400 - Data Communications and Networking
             break;
             case '💿':
-                member.role.add('752322550792716369');//Add EE4420 - Multimedia Networking
+                member.roles.add('752322550792716369');//Add EE4420 - Multimedia Networking
             break;
             case '😈':
-                member.role.add('752311721745580134');//Add EE4440 - Computer Organization
+                member.roles.add('752311721745580134');//Add EE4440 - Computer Organization
             break;
             case '🚊':
-                member.role.add('752311483630616646');//Add EE4450 - Embedded Architecture
+                member.roles.add('752311483630616646');//Add EE4450 - Embedded Architecture
             break;
             case '🚀':
-                member.role.add('752322754312798219');//Add EE4480 - Advanced Digital Design
+                member.roles.add('752322754312798219');//Add EE4480 - Advanced Digital Design
             break;
         }
     }
@@ -170,16 +165,16 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_ControlsID){
         switch(name){
             case '🎛️':
-                member.role.add('752319594127163452');//Add EE3600 - Controls Systems 1
+                member.roles.add('752319594127163452');//Add EE3600 - Controls Systems 1
             break;
             case '🥽':
-                member.role.add('752311367830208633');//Add EE4600 - Controls Ststems 2
+                member.roles.add('752311367830208633');//Add EE4600 - Controls Ststems 2
             break;
             case '⤴️':
-                member.role.add('752322956071534643');//Add EE4610 - Digital Controls Systems
+                member.roles.add('752322956071534643');//Add EE4610 - Digital Controls Systems
             break;
             case '⤵️':
-                member.role.add('752308309356183563');//Add EE4620 - Modern Controls Systems
+                member.roles.add('752308309356183563');//Add EE4620 - Modern Controls Systems
             break;
         }
     }
@@ -187,22 +182,22 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_ElectronicsID){
         switch(name){
             case '🌩️':
-                member.role.add('752319826843926529');//Add EE3700 - Electronics 1
+                member.roles.add('752319826843926529');//Add EE3700 - Electronics 1
             break;
             case '📶':
-                member.role.add('752314214894403625');//Add EE3710 - Electronics 2
+                member.roles.add('752314214894403625');//Add EE3710 - Electronics 2
             break;
             case '📺':
-                member.role.add('752320118263906334');//Add EE3720 - Digital Electronics
+                member.roles.add('752320118263906334');//Add EE3720 - Digital Electronics
             break;
             case '🤖':
-                member.role.add('752307518482546768');//Add EE4710 - Analog Integrated Circuits:
+                member.roles.add('752307518482546768');//Add EE4710 - Analog Integrated Circuits:
             break;
             case '🤏':
-                member.role.add('752323229716185228');//Add EE4720 - CMOS VLSI Design
+                member.roles.add('752323229716185228');//Add EE4720 - CMOS VLSI Design
             break;
             case '🧠':
-                member.role.add('752323341041270805');//Add EE4730 - Optoelectronics
+                member.roles.add('752323341041270805');//Add EE4730 - Optoelectronics
             break;
         }
     }
@@ -210,13 +205,13 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_BiomedicalID){
         switch(name){
             case '❤️':
-                member.role.add('752313758767906828');//Add EE3810 - Sensors, Data Acquisition, and Instrumentation w/ Applicaiton in Biomedical Engineering
+                member.roles.add('752313758767906828');//Add EE3810 - Sensors, Data Acquisition, and Instrumentation w/ Applicaiton in Biomedical Engineering
             break;
             case '🦿':
-                member.role.add('752307264441942096');//Add EE4810 - Biomedical Devices
+                member.roles.add('752307264441942096');//Add EE4810 - Biomedical Devices
             break;
             case '🧠':
-                member.role.add('752323493512609862');//Add EE4820 - Biomedical Signal Processing
+                member.roles.add('752323493512609862');//Add EE4820 - Biomedical Signal Processing
             break;
         }
     }
@@ -224,25 +219,25 @@ bot.on('messageReactionAdd', (reaction, user) =>{
     if(reaction.message.id === message_LabsID){
         switch(name){
             case '🌩️':
-                member.role.add('752316957063250021');//Add EE2049 - Electrical Circuits and Measurments Labratory
+                member.roles.add('752316957063250021');//Add EE2049 - Electrical Circuits and Measurments Labratory
             break;
             case '💻':
-                member.role.add('752316590560641114');//Add EE2449 - Digital Logic Labratory
+                member.roles.add('752316590560641114');//Add EE2449 - Digital Logic Labratory
             break;
             case '🎤':
-                member.role.add('752315151532949575');//Add EE3209 - Communications Labratory
+                member.roles.add('752315151532949575');//Add EE3209 - Communications Labratory
             break;
             case '🧲':
-                member.role.add('752314646777561148');//Add EE3309 - Electromagnetic Energy Conversion Labratory
+                member.roles.add('752314646777561148');//Add EE3309 - Electromagnetic Energy Conversion Labratory
             break;
             case '🤖':
-                member.role.add('752314307882123345');//Add EE3709 - Electronics Labratory
+                member.roles.add('752314307882123345');//Add EE3709 - Electronics Labratory
             break;
             case '🔊':
-                member.role.add('752323821142278295');//Add EE4229 - Digital Signals Processing Labratory
+                member.roles.add('752323821142278295');//Add EE4229 - Digital Signals Processing Labratory
             break;
             case '🎛️':
-                member.role.add('752307844962844753');//Add EE4689 - Control Systems Labratory
+                member.roles.add('752307844962844753');//Add EE4689 - Control Systems Labratory
             break;
         }
     }
@@ -252,7 +247,7 @@ bot.on('messageReactionAdd', (reaction, user) =>{
 //I want the Server to be onpened to them only when they read all the rules
 
 
-bot.on('message', (message) => {
+bot.on('message', async (message) => {
     if (message.author.bot) return;//Prevent Bot from responding to other bots
     //Processes commands
     if(message.content.startsWith(CMD_PREFIX)){
