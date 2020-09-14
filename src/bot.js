@@ -144,7 +144,7 @@ bot.on('messageReactionAdd', (reaction, user) => {
             case '💻':
                 member.roles.add('752314392049090622');//Add EE3450 - Embedded System Programming 2
             break;
-            case '📁':
+            case ' 📁':
                 member.roles.add('752311821456638023');//Add EE4400 - Data Communications and Networking
             break;
             case '💿':
